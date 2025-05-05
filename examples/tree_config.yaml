@@ -1,0 +1,62 @@
+trees:
+  sentiment:
+    root:
+      question: "What is the overall sentiment of this text?"
+      options:
+        - value: "positive"
+          next:
+            question: "How strongly positive is it?"
+            options:
+              - value: "very"
+                next:
+                  label: "very_positive"
+              - value: "somewhat"
+                next:
+                  label: "somewhat_positive"
+        - value: "negative"
+          next:
+            question: "How strongly negative is it?"
+            options:
+              - value: "very"
+                next:
+                  label: "very_negative"
+              - value: "somewhat"
+                next:
+                  label: "somewhat_negative"
+        - value: "neutral"
+          next:
+            label: "neutral"
+
+  topic:
+    root:
+      question: "What is the main topic of this text?"
+      options:
+        - value: "technology"
+          next:
+            question: "What aspect of technology?"
+            options:
+              - value: "ai"
+                next:
+                  label: "ai_tech"
+              - value: "software"
+                next:
+                  label: "software_tech"
+              - value: "hardware"
+                next:
+                  label: "hardware_tech"
+        - value: "business"
+          next:
+            question: "What aspect of business?"
+            options:
+              - value: "finance"
+                next:
+                  label: "finance_business"
+              - value: "marketing"
+                next:
+                  label: "marketing_business"
+              - value: "management"
+                next:
+                  label: "management_business"
+        - value: "other"
+          next:
+            label: "other_topic" 
